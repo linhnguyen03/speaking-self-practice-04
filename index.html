@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Speaking Practice — Shopping, Gifts, Plans &amp; Decisions</title>
+<style>
+  :root{
+    --blue:#2563eb; --blue-dark:#1d4ed8; --green:#16a34a; --amber:#d97706;
+    --red:#dc2626; --bg:#f4f6fb; --card:#ffffff; --ink:#1f2937; --muted:#6b7280;
+    --border:#e5e7eb; --purple:#7c3aed;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); padding:24px 14px 60px;
+  }
+  .wrap{max-width:760px; margin:0 auto;}
+  h1{text-align:center; font-size:1.5rem; margin-bottom:2px;}
+  .subtitle{text-align:center; color:var(--muted); margin-bottom:22px; font-size:0.95rem;}
+
+  .tabs{display:flex; gap:8px; margin-bottom:18px;}
+  .tab-btn{
+    flex:1; padding:11px 6px; border:none; border-radius:10px; background:#e6ebf5;
+    color:var(--blue-dark); font-weight:600; font-size:0.92rem; cursor:pointer;
+    transition:.15s;
+  }
+  .tab-btn.active{background:var(--blue); color:#fff;}
+  .tab-btn:hover:not(.active){background:#d7e0f3;}
+
+  .progress-wrap{margin-bottom:16px;}
+  .progress-label{display:flex; justify-content:space-between; font-size:0.82rem; color:var(--muted); margin-bottom:5px;}
+  .progress-bar-bg{background:#e2e6ef; border-radius:20px; height:9px; overflow:hidden;}
+  .progress-bar-fill{background:linear-gradient(90deg,var(--blue),#60a5fa); height:100%; width:0%; transition:width .3s ease;}
+
+  .card{
+    background:var(--card); border-radius:16px; padding:24px 22px; box-shadow:0 2px 10px rgba(20,30,60,.06);
+    border:1px solid var(--border); min-height:200px;
+  }
+  .topic-tag{
+    display:inline-block; background:#f3e8ff; color:var(--purple); font-size:0.74rem;
+    font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+    padding:3px 10px; border-radius:20px; margin-bottom:10px;
+  }
+  .q-title{font-size:1.12rem; font-weight:700; line-height:1.4; margin:0 0 12px;}
+  .cue-bullets{margin:0 0 14px 18px; padding:0; color:var(--ink);}
+  .cue-bullets li{margin-bottom:4px; line-height:1.4;}
+
+  .colloc-box{
+    background:#eef4ff; border:1px dashed #b7cbf0; border-radius:10px; padding:10px 14px;
+    margin-bottom:16px; font-size:0.9rem;
+  }
+  .colloc-box .lbl{font-weight:700; color:var(--blue-dark); display:block; margin-bottom:5px; font-size:0.8rem; text-transform:uppercase; letter-spacing:.03em;}
+  .chip{
+    display:inline-block; background:#fff; border:1px solid #c7d7f5; color:var(--blue-dark);
+    padding:3px 10px; border-radius:20px; margin:3px 4px 0 0; font-weight:600; font-size:0.85rem;
+  }
+
+  .hint{color:var(--muted); font-size:0.88rem; font-style:italic; margin-bottom:16px;}
+
+  .timer-box{
+    display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
+    background:#fbf6ea; border:1px solid #f0dfad; border-radius:12px; padding:14px; margin-bottom:16px;
+  }
+  .timer-display{font-size:2.1rem; font-weight:700; color:var(--amber); min-width:110px; text-align:center; font-variant-numeric:tabular-nums;}
+  .timer-display.warn{color:var(--red);}
+  .timer-btns button{
+    border:none; border-radius:8px; padding:8px 14px; font-weight:600; cursor:pointer; font-size:0.85rem; margin:0 3px;
+  }
+  .t-start{background:var(--green); color:#fff;}
+  .t-pause{background:#e5e7eb; color:var(--ink);}
+  .t-reset{background:#e5e7eb; color:var(--ink);}
+
+  .reveal-btn{
+    display:block; width:100%; padding:12px; border:none; border-radius:10px;
+    background:var(--blue); color:#fff; font-weight:700; font-size:0.98rem; cursor:pointer; margin-bottom:6px;
+  }
+  .reveal-btn:hover{background:var(--blue-dark);}
+
+  .answer-box{
+    display:none; background:#f6f9fc; border-left:4px solid var(--blue); border-radius:8px;
+    padding:16px 18px; margin-top:14px; line-height:1.65; font-size:0.97rem;
+  }
+  .answer-box.show{display:block; animation:fade .25s ease;}
+  .answer-box p{margin:0 0 10px;}
+  .answer-box p:last-child{margin-bottom:0;}
+  .answer-box strong{color:var(--blue-dark);}
+  .answer-box u{text-decoration-color:#9ca3af;}
+  @keyframes fade{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);}}
+
+  .nav-row{display:flex; justify-content:space-between; align-items:center; margin-top:20px;}
+  .nav-btn{
+    border:none; border-radius:9px; padding:10px 18px; font-weight:600; cursor:pointer; font-size:0.9rem;
+    background:#e5e7eb; color:var(--ink);
+  }
+  .nav-btn.primary{background:var(--blue); color:#fff;}
+  .nav-btn:disabled{opacity:.4; cursor:not-allowed;}
+  .counter{color:var(--muted); font-size:0.85rem;}
+
+  .done-msg{text-align:center; padding:30px 10px;}
+  .done-msg h2{color:var(--green); margin-bottom:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>IELTS Speaking Practice</h1>
+  <div class="subtitle">Shopping &amp; Gifts · Making Plans &amp; Decisions — Band 7.0+</div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-part="part1">Part 1</button>
+    <button class="tab-btn" data-part="part2">Part 2</button>
+    <button class="tab-btn" data-part="part3">Part 3</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span id="progressText">Question 1 of 8</span>
+      <span id="progressPercent">0%</span>
+    </div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+  </div>
+
+  <div class="card" id="card"></div>
+
+  <div class="nav-row">
+    <button class="nav-btn" id="prevBtn">&larr; Previous</button>
+    <span class="counter" id="counterText"></span>
+    <button class="nav-btn primary" id="nextBtn">Next &rarr;</button>
+  </div>
+</div>
+
+<script>
+const DATA = {
+  part1: {
+    label: "Part 1 — Introduction & Interview",
+    items: [
+      {
+        topic: "Shopping",
+        q: "1. Do you like going shopping?",
+        colloc: ["browse the shops","a bargain hunter","on a tight budget","window shopping"],
+        answer: "<p>It really depends on what I'm shopping for. I love going out to <strong>browse the shops</strong> for clothes or stationery, especially at the weekend when there's no rush. <u>On the other hand</u>, I find food shopping quite tedious because it's just something I have to get done. <u>Since</u> I'm usually <strong>on a tight budget</strong>, I'm very much <strong>a bargain hunter</strong> and I'll wait for a sale rather than pay full price. <u>Honestly</u>, I'm often happy just <strong>window shopping</strong> without buying anything at all.</p>"
+      },
+      {
+        topic: "Shopping",
+        q: "2. Who do you usually go shopping with?",
+        colloc: ["tag along","a second opinion","have similar taste","make a day of it"],
+        answer: "<p>I usually go shopping with my mum or with one or two close friends. I prefer going with friends for clothes because we <strong>have similar taste</strong>, so they can give me <strong>a second opinion</strong> before I buy something. <u>That said</u>, when I go with my mum she tends to pay, so I'm always happy to <strong>tag along</strong> with her as well. <u>Occasionally</u>, we'll <strong>make a day of it</strong> and stop for lunch in between, which turns it into more of a social occasion than a chore.</p>"
+      },
+      {
+        topic: "Shopping",
+        q: "3. Do you prefer shopping in small shops or big shopping centres?",
+        colloc: ["under one roof","a wider range of","personal service","haggle over the price"],
+        answer: "<p>I can see the appeal of both, but on balance I lean towards big shopping centres. The main reason is convenience, since you get everything <strong>under one roof</strong> and there's <strong>a wider range of</strong> products to choose from, as well as air conditioning, which matters a lot in our climate. <u>Having said that</u>, I do enjoy small local shops because the owners offer much more <strong>personal service</strong> and you can sometimes <strong>haggle over the price</strong>. <u>So in the end</u>, it depends on whether I want speed or a bit of character.</p>"
+      },
+      {
+        topic: "Shopping",
+        q: "4. Have you ever bought something you didn't really need?",
+        colloc: ["an impulse buy","go to waste","regret it afterwards","carried away"],
+        answer: "<p>Yes, more often than I'd like to admit. The clearest example was a pair of expensive trainers I bought last year simply because they were on sale. It was a classic <strong>impulse buy</strong> — I got <strong>carried away</strong> by the discount rather than thinking about whether I'd actually wear them. <u>Unfortunately</u>, they've been sitting in my wardrobe ever since, so the money essentially <strong>went to waste</strong>. <u>Looking back</u>, I definitely <strong>regretted it afterwards</strong>, and now I try to wait a day before buying anything expensive.</p>"
+      },
+      {
+        topic: "Making plans",
+        q: "1. Do you usually plan your weekends?",
+        colloc: ["have a rough idea","play it by ear","make the most of","a packed schedule"],
+        answer: "<p>I'd say I usually <strong>have a rough idea</strong> of what I want to do, but I rarely plan every hour. I'll normally arrange one main thing in advance, like meeting friends or going somewhere with my family, and then <strong>play it by ear</strong> for the rest. <u>The reason is</u> that my weekdays already follow <strong>a packed schedule</strong> with school and extra classes, so I don't want my weekend to feel the same way. <u>Even so</u>, a little planning does help me <strong>make the most of</strong> my free time.</p>"
+      },
+      {
+        topic: "Making plans",
+        q: "2. Do you prefer to make plans alone or with others?",
+        colloc: ["bounce ideas off","reach a compromise","at my own pace","take everyone's preferences into account"],
+        answer: "<p>Honestly, I prefer a mix of the two. When it's something personal, like how I'll revise for an exam, I'd much rather plan alone so I can work <strong>at my own pace</strong> without having to explain myself. <u>However</u>, for anything social, planning with others is far better because you can <strong>bounce ideas off</strong> each other and come up with options you'd never have thought of. <u>The only drawback</u> is that it takes longer to <strong>reach a compromise</strong>, since you have to <strong>take everyone's preferences into account</strong>.</p>"
+      },
+      {
+        topic: "Making plans",
+        q: "3. Do you write down your plans?",
+        colloc: ["keep track of","jot down","slip my mind","stay on top of things"],
+        answer: "<p>Yes, I'm quite organised in that respect. I use the notes app on my phone to <strong>jot down</strong> anything I need to remember, and I keep a paper planner for school deadlines. <u>The main reason</u> is that if I don't write things down, they tend to <strong>slip my mind</strong> completely, especially during busy weeks. <u>I've found that</u> having everything written in one place helps me <strong>keep track of</strong> what's due and generally <strong>stay on top of things</strong> rather than panicking at the last minute.</p>"
+      },
+      {
+        topic: "Making plans",
+        q: "4. How do you feel when a plan doesn't work out?",
+        colloc: ["let down","go with the flow","have a backup plan","blow things out of proportion"],
+        answer: "<p>My first reaction is usually disappointment, particularly if it's something I've been looking forward to for weeks — I do feel quite <strong>let down</strong> in that moment. <u>That said</u>, I've learned not to <strong>blow things out of proportion</strong>, because most plans can simply be rearranged for another day. <u>These days</u> I try to <strong>have a backup plan</strong> whenever something depends on the weather or on other people. <u>On the whole</u>, I think being able to <strong>go with the flow</strong> is a useful skill, since things rarely go exactly as expected.</p>"
+      }
+    ]
+  },
+  part2: {
+    label: "Part 2 — Long Turn (Cue Card)",
+    items: [
+      {
+        title: "Cue Card A — Describe a gift you'd like to buy for your friend",
+        bullets: ["who the friend is","what the gift is","how you would get it","and explain why you would like to buy this gift for your friend"],
+        colloc: ["put some thought into it","save up for","a thoughtful gift","mean a lot to someone"],
+        timer: true,
+        answer: "<p>The gift I'd like to talk about is a hardback sketchbook and a set of drawing pencils that I'd love to buy for my closest friend, Trang. We've known each other since primary school and we sit together in class, so she's probably the person I spend the most time with apart from my family.</p><p>The reason I chose this particular gift is that she's been drawing seriously for the past two years, but she still uses cheap paper from the stationery shop near school, which is far too thin for the materials she's using. I've noticed her mentioning a specific brand a few times, so I'd want to buy that one rather than just guessing.</p><p>As for how I'd get it, there's a specialist art shop about twenty minutes from my house that stocks it. It's not cheap, so I'd need to <strong>save up for</strong> it over a couple of months from my pocket money. <u>I'd also like to</u> get it wrapped properly and write her a card, since I think presentation makes a real difference.</p><p>The reason I'd like to give her this is that she's always the one supporting everyone else, and I don't think she'd ever spend that much on herself. <u>For me</u>, <strong>a thoughtful gift</strong> is one where you've clearly <strong>put some thought into it</strong> rather than buying the first thing you see. <u>I'm fairly confident</u> it would <strong>mean a lot to her</strong>, simply because it shows I've actually been paying attention to what she cares about.</p>"
+      },
+      {
+        title: "Cue Card B — Describe an important decision that you made",
+        bullets: ["what the decision was","when you made it","how you made it","and explain why it was important to you"],
+        colloc: ["weigh up the pros and cons","have second thoughts","stick to my decision","a turning point"],
+        timer: true,
+        answer: "<p>The decision I'd like to describe is choosing to switch from the science stream to the social sciences stream at my school, which is something I did at the end of Year 10, so about two years ago now.</p><p>At that point I'd been in the science class for a year, mainly because my parents assumed I'd follow my older brother into medicine. The problem was that I was struggling badly in chemistry and physics, while I was doing well in English and history and genuinely enjoying them. <u>Even so</u>, changing stream felt like a huge risk.</p><p>In terms of how I made it, I didn't rush. I spent about a month trying to <strong>weigh up the pros and cons</strong> — I looked at my results from both years, talked to my form teacher, and also spoke to two older students who had made a similar switch. <u>The hardest part</u> was the conversation with my parents, because they were worried I was giving up on a stable career. <u>In the end</u>, I wrote down my reasons before speaking to them so I wouldn't lose my nerve.</p><p>I'd say it was important for two reasons. <u>Firstly</u>, it was the first major decision I'd ever made against what my family expected, so it really was <strong>a turning point</strong> in terms of taking responsibility for my own future. <u>Secondly</u>, my results improved almost immediately, which confirmed I'd made the right call. <u>Although</u> I did <strong>have second thoughts</strong> in the first few weeks, I'm very glad I <strong>stuck to my decision</strong>.</p>"
+      }
+    ]
+  },
+  part3: {
+    label: "Part 3 — Discussion",
+    items: [
+      {
+        topic: "Gifts",
+        q: "1. Why do people give gifts?",
+        colloc: ["strengthen relationships","express gratitude","mark a special occasion","a social custom"],
+        answer: "<p>I think there are several reasons behind it. <u>Most obviously</u>, people give gifts to <strong>mark a special occasion</strong> such as a birthday or a wedding, which has become <strong>a social custom</strong> in almost every culture. <u>On a deeper level</u>, though, giving is really a way to <strong>strengthen relationships</strong>, because taking the time to choose something shows that you value the other person. <u>I'd also point out</u> that gifts are often used to <strong>express gratitude</strong> — for example, students giving flowers to teachers here. <u>And of course</u>, there's sometimes an element of obligation involved, where people give simply because they feel it's expected of them.</p>"
+      },
+      {
+        topic: "Gifts",
+        q: "2. When do people normally give gifts to others in your country?",
+        colloc: ["lucky money","housewarming","show respect","a token of appreciation"],
+        answer: "<p>In Vietnam there are quite a few occasions. The biggest by far is Tet, our Lunar New Year, when adults give children <strong>lucky money</strong> in red envelopes, which is seen as wishing them good fortune for the year ahead. <u>Besides that</u>, gifts are very common at weddings and at <strong>housewarming</strong> parties, where guests usually bring something practical for the home. <u>Another important one</u> is Teachers' Day in November, when students give flowers or small presents to <strong>show respect</strong> for their teachers. <u>I'd say</u> these gifts are rarely expensive — they're more <strong>a token of appreciation</strong> than anything else.</p>"
+      },
+      {
+        topic: "Gifts",
+        q: "3. Why is it sometimes difficult to choose a gift for someone?",
+        colloc: ["get it wrong","suit their taste","already have everything","run out of ideas"],
+        answer: "<p>I think the main difficulty is the fear that you'll <strong>get it wrong</strong> and the person will be disappointed, even if they pretend otherwise. It's genuinely hard to find something that will <strong>suit their taste</strong> unless you know them extremely well, and taste in things like clothes or music is very personal. <u>Another issue</u> is that older relatives often <strong>already have everything</strong> they need, so there's very little left to buy them. <u>On top of that</u>, if you've been giving the same person presents for years, you simply <strong>run out of ideas</strong>. <u>For that reason</u>, I think it's perfectly acceptable to ask people what they'd actually like.</p>"
+      },
+      {
+        topic: "Gifts",
+        q: "4. Is the price of a gift important?",
+        colloc: ["it's the thought that counts","put someone under pressure","sentimental value","beyond their means"],
+        answer: "<p>I'd say price matters far less than people assume. <u>In my view</u>, <strong>it's the thought that counts</strong> — a handwritten letter or something homemade often has more <strong>sentimental value</strong> than something expensive bought in a hurry. <u>That said</u>, I do think price can't be ignored entirely, because giving something obviously cheap at a formal occasion like a wedding might be seen as disrespectful in some cultures. <u>There's also</u> the risk that an extremely expensive gift can <strong>put someone under pressure</strong> to give something equally valuable in return. <u>So on balance</u>, I think a gift should be appropriate to the occasion but never <strong>beyond someone's means</strong>.</p>"
+      },
+      {
+        topic: "Decisions",
+        q: "1. How do people usually make important decisions?",
+        colloc: ["weigh up the options","seek advice","gut feeling","take time to reflect"],
+        answer: "<p>I think most people use a combination of logic and instinct. <u>Typically</u>, they'll start by trying to <strong>weigh up the options</strong>, perhaps even listing the advantages and disadvantages on paper if the decision is a major one like choosing a career. <u>After that</u>, almost everyone will <strong>seek advice</strong> from family or friends, partly for information and partly for reassurance. <u>Having said that</u>, I think a lot of people ultimately go with their <strong>gut feeling</strong>, and then look for reasons to justify it afterwards. <u>In my opinion</u>, the wisest approach is to gather the facts and then <strong>take time to reflect</strong> rather than deciding immediately.</p>"
+      },
+      {
+        topic: "Decisions",
+        q: "2. Why do some people find decision-making difficult?",
+        colloc: ["fear of making the wrong choice","spoilt for choice","lack confidence","overthink things"],
+        answer: "<p>There are a few reasons for this. <u>The biggest one</u> is simply the <strong>fear of making the wrong choice</strong>, because major decisions are difficult to reverse and people worry they'll regret it for years. <u>Closely related to that</u> is the fact that some people <strong>lack confidence</strong> in their own judgement, often because they've been criticised in the past, so they'd rather someone else decided for them. <u>Another factor</u> is that we're now <strong>spoilt for choice</strong> in a way previous generations weren't — having twenty options is far harder than having two. <u>Finally</u>, some people simply <strong>overthink things</strong> and keep searching for a perfect answer that doesn't exist.</p>"
+      },
+      {
+        topic: "Decisions",
+        q: "3. Is it better to make decisions alone or ask for advice?",
+        colloc: ["a fresh perspective","blind spots","the final say","muddy the waters"],
+        answer: "<p>I think asking for advice is usually sensible, but the decision itself should remain yours. The clear benefit of consulting others is that they offer <strong>a fresh perspective</strong> and can point out <strong>blind spots</strong> you hadn't considered, particularly if they've faced the same situation before. <u>On the other hand</u>, asking too many people tends to <strong>muddy the waters</strong>, because you end up with contradictory opinions and feel even more confused than before. <u>There's also</u> the risk that other people's advice reflects what they would want rather than what suits you. <u>So overall</u>, I'd say gather a couple of trusted opinions, but make sure you have <strong>the final say</strong>, since you're the one who has to live with the consequences.</p>"
+      }
+    ]
+  }
+};
+
+let currentPart = "part1";
+let currentIndex = 0;
+let timerInterval = null;
+let timerSeconds = 120;
+
+const cardEl = document.getElementById("card");
+const progressText = document.getElementById("progressText");
+const progressPercent = document.getElementById("progressPercent");
+const progressFill = document.getElementById("progressFill");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const counterText = document.getElementById("counterText");
+
+document.querySelectorAll(".tab-btn").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    currentPart = btn.dataset.part;
+    currentIndex = 0;
+    stopTimer();
+    render();
+  });
+});
+
+prevBtn.addEventListener("click", ()=>{
+  if(currentIndex>0){ currentIndex--; stopTimer(); render(); }
+});
+nextBtn.addEventListener("click", ()=>{
+  const items = DATA[currentPart].items;
+  if(currentIndex < items.length-1){ currentIndex++; stopTimer(); render(); }
+  else { currentIndex = items.length; stopTimer(); render(); }
+});
+
+function formatTime(s){
+  const m = Math.floor(s/60).toString().padStart(2,"0");
+  const sec = (s%60).toString().padStart(2,"0");
+  return m+":"+sec;
+}
+
+function stopTimer(){
+  if(timerInterval){ clearInterval(timerInterval); timerInterval=null; }
+  timerSeconds = 120;
+}
+
+function render(){
+  const part = DATA[currentPart];
+  const items = part.items;
+  const total = items.length;
+
+  if(currentIndex >= total){
+    cardEl.innerHTML = '<div class="done-msg"><h2>Well done! 🎉</h2><p>You have finished all the questions in this part.</p></div>';
+    progressText.textContent = "Completed " + total + " of " + total;
+    progressPercent.textContent = "100%";
+    progressFill.style.width = "100%";
+    prevBtn.disabled = false;
+    nextBtn.disabled = true;
+    counterText.textContent = "";
+    return;
+  }
+
+  const item = items[currentIndex];
+  progressText.textContent = "Question " + (currentIndex+1) + " of " + total;
+  const pct = Math.round(((currentIndex)/total)*100);
+  progressPercent.textContent = pct + "%";
+  progressFill.style.width = pct + "%";
+  counterText.textContent = part.label;
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = false;
+  nextBtn.textContent = currentIndex === total-1 ? "Finish ✓" : "Next →";
+
+  let html = "";
+
+  if(item.topic){ html += '<span class="topic-tag">'+item.topic+'</span>'; }
+
+  if(item.title){
+    html += '<div class="q-title">'+item.title+'</div>';
+    html += '<ul class="cue-bullets">' + item.bullets.map(b=>'<li>'+b+'</li>').join("") + '</ul>';
+  } else {
+    html += '<div class="q-title">'+item.q+'</div>';
+  }
+
+  html += '<div class="colloc-box"><span class="lbl">Useful collocations</span>' +
+          item.colloc.map(c=>'<span class="chip">'+c+'</span>').join("") + '</div>';
+
+  if(item.timer){
+    html += '<div class="timer-box">' +
+              '<div class="timer-display" id="timerDisplay">02:00</div>' +
+              '<div class="timer-btns">' +
+                '<button class="t-start" id="timerStart">▶ Start</button>' +
+                '<button class="t-pause" id="timerPause">⏸ Pause</button>' +
+                '<button class="t-reset" id="timerReset">↺ Reset</button>' +
+              '</div>' +
+            '</div>';
+    html += '<div class="hint">Take 1 minute to prepare notes, then speak for up to 2 minutes using the timer above.</div>';
+  } else {
+    html += '<div class="hint">Take a moment to think and speak your answer out loud, then check the sample below.</div>';
+  }
+
+  html += '<button class="reveal-btn" id="revealBtn">Show sample answer</button>';
+  html += '<div class="answer-box" id="answerBox">' + item.answer + '</div>';
+
+  cardEl.innerHTML = html;
+
+  document.getElementById("revealBtn").addEventListener("click", ()=>{
+    document.getElementById("answerBox").classList.add("show");
+  });
+
+  if(item.timer){ setupTimer(); }
+}
+
+function setupTimer(){
+  const display = document.getElementById("timerDisplay");
+  const startBtn = document.getElementById("timerStart");
+  const pauseBtn = document.getElementById("timerPause");
+  const resetBtn = document.getElementById("timerReset");
+
+  display.textContent = formatTime(timerSeconds);
+
+  startBtn.addEventListener("click", ()=>{
+    if(timerInterval) return;
+    timerInterval = setInterval(()=>{
+      timerSeconds--;
+      display.textContent = formatTime(timerSeconds);
+      if(timerSeconds <= 10){ display.classList.add("warn"); }
+      if(timerSeconds <= 0){
+        clearInterval(timerInterval);
+        timerInterval = null;
+        display.textContent = "Time's up!";
+      }
+    }, 1000);
+  });
+
+  pauseBtn.addEventListener("click", ()=>{
+    if(timerInterval){ clearInterval(timerInterval); timerInterval = null; }
+  });
+
+  resetBtn.addEventListener("click", ()=>{
+    if(timerInterval){ clearInterval(timerInterval); timerInterval = null; }
+    timerSeconds = 120;
+    display.classList.remove("warn");
+    display.textContent = formatTime(timerSeconds);
+  });
+}
+
+render();
+</script>
+</body>
+</html>
